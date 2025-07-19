@@ -1,0 +1,31 @@
+{
+  "name": "recipe-extractor",
+  "version": "1.0.0",
+  "description": "Extract and format recipes from any website or YouTube video using AI",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "openai": "^4.20.1",
+    "cheerio": "^1.0.0-rc.12",
+    "youtube-transcript": "^1.2.1",
+    "axios": "^1.6.2",
+    "jspdf": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
