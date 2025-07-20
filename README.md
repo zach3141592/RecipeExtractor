@@ -1,4 +1,4 @@
-# Recipe Extractor 🍳
+# Recipe Extractor
 
 A powerful Next.js web application that extracts and formats recipes from any recipe website or YouTube cooking video using AI-powered content processing. Built with TypeScript, React, and optimized for Vercel deployment!
 
@@ -262,5 +262,3 @@ If you encounter any issues or have questions:
 3. Create a new issue with detailed information about the problem
 
 ---
-
-Built with ❤️ using Next.js, React, TypeScript, and OpenAI. Ready for deployment on Vercel!
