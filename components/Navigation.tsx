@@ -96,6 +96,8 @@ export default function Navigation() {
           letter-spacing: -0.02em;
           cursor: pointer;
           transition: all 0.3s ease;
+          position: relative;
+          top: -2px;
         }
 
         .brand-text:hover {
@@ -143,9 +145,9 @@ export default function Navigation() {
 
         .nav-link:hover {
           color: white !important;
-          background: rgba(255, 255, 255, 0.08);
           text-decoration: none !important;
-          transform: translateY(-1px);
+          opacity: 0.8;
+          transform: scale(1.02);
         }
 
         .nav-link:hover::before {
