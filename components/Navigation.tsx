@@ -75,6 +75,7 @@ export default function Navigation() {
           align-items: center;
           gap: 12px;
           text-decoration: none;
+          padding: 12px 0;
         }
 
         .brand-logo {
@@ -96,8 +97,6 @@ export default function Navigation() {
           letter-spacing: -0.02em;
           cursor: pointer;
           transition: all 0.3s ease;
-          position: relative;
-          top: -2px;
         }
 
         .brand-text:hover {
