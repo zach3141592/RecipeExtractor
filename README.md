@@ -1,38 +1,52 @@
-# Recipe Extractor 🍳
+# hands
 
-A powerful Next.js web application that extracts and formats recipes from any recipe website or YouTube cooking video using AI-powered content processing. Built with TypeScript, React, and optimized for Vercel deployment!
+A modern, minimalist Next.js application that extracts and formats recipes from anywhere - websites, YouTube videos, or images. Built with TypeScript, React, and AI-powered content processing, optimized for Vercel deployment.
 
 ## Features
 
-- **Universal Recipe Extraction**: Works with any recipe website (AllRecipes, Food Network, Tasty, etc.)
-- **YouTube Video Support**: Extracts recipes from YouTube cooking videos using transcripts
-- **AI-Powered Formatting**: Uses OpenAI GPT to clean and format extracted content into structured recipes
-- **Modern React Interface**: Built with Next.js, TypeScript, and styled-jsx for optimal performance
-- **Smart Content Detection**: Automatically detects structured recipe data (JSON-LD) when available
-- **Copy to Clipboard**: Easy one-click copying of formatted recipes
-- **Error Handling**: Comprehensive error handling with user-friendly messages
-- **Vercel Ready**: Optimized for seamless deployment to Vercel
-- **Environment Variables**: Secure API key management
-- **Responsive Design**: Works perfectly on desktop and mobile devices
+- **🌐 Website Extraction**: Extract recipes from any recipe website (AllRecipes, Food Network, Tasty, etc.)
+- **📺 YouTube Support**: Get recipes from YouTube cooking videos using transcript analysis
+- **📸 Image Recognition**: Upload photos of recipes to extract text using AI-powered OCR
+- **🤖 AI-Powered Formatting**: Uses OpenAI GPT to clean and format content into structured recipes
+- **✨ Modern Interface**: Clean, minimalist design with smooth animations and glass morphism effects
+- **📱 Responsive Design**: Perfect experience on desktop, tablet, and mobile devices
+- **📄 PDF Export**: Download formatted recipes as beautiful PDF documents
+- **📋 Copy to Clipboard**: One-click copying of formatted recipes
+- **🚀 Vercel Ready**: Optimized for seamless deployment to Vercel
+- **🔒 Secure**: Environment-based API key management
+- **⚡ Fast**: Next.js with TypeScript for optimal performance
 
 ## How It Works
 
-1. **URL Processing**: Detects whether the input is a YouTube video or a regular website
-2. **Content Extraction**:
-   - For websites: Scrapes HTML content using Cheerio, prioritizing structured recipe data
-   - For YouTube: Extracts video transcripts and titles using youtube-transcript
-3. **AI Formatting**: Sends extracted content to OpenAI GPT for intelligent recipe formatting
-4. **Clean Output**: Returns a beautifully formatted recipe with ingredients, instructions, and metadata
+**hands** offers three ways to extract recipes:
+
+### 🌐 From URLs
+
+1. **URL Analysis**: Detects whether input is a YouTube video or recipe website
+2. **Content Extraction**: Scrapes HTML content or extracts video transcripts
+3. **Smart Detection**: Prioritizes structured recipe data (JSON-LD) when available
+
+### 📸 From Images
+
+1. **Image Upload**: Drag & drop or select recipe photos
+2. **OCR Processing**: Extracts text using AI-powered image recognition
+3. **Text Cleanup**: Processes extracted text for recipe formatting
+
+### 🤖 AI Formatting
+
+1. **Content Analysis**: OpenAI GPT analyzes extracted content
+2. **Recipe Structuring**: Formats into clean ingredients, instructions, and metadata
+3. **Output Options**: Copy to clipboard or download as PDF
 
 ## Quick Deploy to Vercel
 
-The easiest way to deploy this app is to use Vercel:
+Deploy **hands** to Vercel in minutes:
 
 1. **Fork this repository** to your GitHub account
 2. **Visit [Vercel](https://vercel.com)** and sign in with GitHub
 3. **Click "New Project"** and select this repository
 4. **Add Environment Variable**: Set `OPENAI_API_KEY` to your OpenAI API key
-5. **Deploy!** Your app will be live in minutes
+5. **Deploy!** Your hands app will be live globally
 
 ## Local Development Setup
 

@@ -1,7 +1,7 @@
 {
-  "name": "recipe-extractor",
+  "name": "hands",
   "version": "1.0.0",
-  "description": "Extract and format recipes from any website or YouTube video using AI",
+  "description": "Extract recipes from anywhere - websites, YouTube videos, or images using AI",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +16,9 @@
     "cheerio": "^1.0.0-rc.12",
     "youtube-transcript": "^1.2.1",
     "axios": "^1.6.2",
-    "jspdf": "^2.5.1"
+    "jspdf": "^2.5.1",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",

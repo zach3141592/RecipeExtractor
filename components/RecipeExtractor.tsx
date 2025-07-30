@@ -46,7 +46,7 @@ export default function RecipeExtractor() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Recipe Extractor</h1>
+        <h1>hands</h1>
         <p>Extract clean, formatted recipes from any website or YouTube video</p>
       </div>
       
