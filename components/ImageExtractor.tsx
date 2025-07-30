@@ -185,7 +185,7 @@ export default function ImageExtractor() {
         }
 
         .header {
-          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
           color: white;
           padding: 60px 40px;
           text-align: center;
@@ -241,7 +241,7 @@ export default function ImageExtractor() {
         }
 
         .upload-area {
-          border: 2px dashed rgba(99, 102, 241, 0.2);
+          border: 2px dashed rgba(0, 0, 0, 0.2);
           border-radius: 24px;
           padding: 60px 40px;
           text-align: center;
@@ -254,42 +254,42 @@ export default function ImageExtractor() {
 
         .upload-area:hover,
         .upload-area.drag-active {
-          border-color: #6366f1;
-          background: rgba(99, 102, 241, 0.05);
+          border-color: #000000;
+          background: rgba(0, 0, 0, 0.05);
           transform: translateY(-3px);
           box-shadow: 
-            0 8px 32px rgba(99, 102, 241, 0.15),
-            0 4px 16px rgba(99, 102, 241, 0.08);
+            0 8px 32px rgba(0, 0, 0, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .upload-area.has-file {
-          border-color: #10b981;
-          background: rgba(16, 185, 129, 0.05);
+          border-color: #000000;
+          background: rgba(0, 0, 0, 0.05);
         }
 
         .upload-content h3 {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #1e293b;
+          color: #000000;
           margin-bottom: 8px;
         }
 
         .upload-content p {
           font-size: 1rem;
-          color: #64748b;
+          color: #333333;
           margin-bottom: 16px;
         }
 
         .supported-formats {
           font-size: 0.875rem;
-          color: #94a3b8;
+          color: #666666;
         }
 
         .upload-icon {
           width: 64px;
           height: 64px;
           margin: 0 auto 24px;
-          color: #6366f1;
+          color: #000000;
         }
 
         .upload-icon svg {
@@ -312,7 +312,7 @@ export default function ImageExtractor() {
         .file-icon {
           width: 48px;
           height: 48px;
-          color: #10b981;
+          color: #000000;
           flex-shrink: 0;
         }
 
@@ -331,12 +331,12 @@ export default function ImageExtractor() {
 
         .file-name {
           font-weight: 500;
-          color: #1e293b;
+          color: #000000;
           font-size: 0.875rem;
         }
 
         .file-size {
-          color: #64748b;
+          color: #666666;
           font-size: 0.75rem;
         }
 
@@ -359,7 +359,7 @@ export default function ImageExtractor() {
         }
 
         .extract-btn {
-          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+          background: linear-gradient(135deg, #000000 0%, #333333 100%);
           color: white;
           border: none;
           padding: 24px 40px;
@@ -384,7 +384,7 @@ export default function ImageExtractor() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
@@ -392,8 +392,8 @@ export default function ImageExtractor() {
         .extract-btn:hover:not(:disabled) {
           transform: translateY(-3px);
           box-shadow: 
-            0 16px 48px rgba(99, 102, 241, 0.25),
-            0 8px 24px rgba(99, 102, 241, 0.15);
+            0 16px 48px rgba(0, 0, 0, 0.25),
+            0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .extract-btn:hover:not(:disabled)::before {
@@ -468,10 +468,10 @@ export default function ImageExtractor() {
 
         body {
           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+          background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
           min-height: 100vh;
           padding: 20px;
-          color: #1e293b;
+          color: #000000;
         }
 
         html {

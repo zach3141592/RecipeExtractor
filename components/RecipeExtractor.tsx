@@ -94,7 +94,7 @@ export default function RecipeExtractor() {
         }
 
         .header {
-          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
           color: white;
           padding: 60px 40px;
           text-align: center;
@@ -159,33 +159,33 @@ export default function RecipeExtractor() {
         .url-input {
           flex: 1;
           padding: 24px 28px;
-          border: 2px solid rgba(99, 102, 241, 0.15);
+          border: 2px solid rgba(0, 0, 0, 0.15);
           border-radius: 20px;
           font-size: 16px;
           font-weight: 400;
           background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(10px);
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          color: #1e293b;
+          color: #000000;
           outline: none;
         }
 
         .url-input::placeholder {
-          color: #94a3b8;
+          color: #666666;
           font-weight: 300;
         }
 
         .url-input:focus {
-          border-color: #6366f1;
+          border-color: #000000;
           background: rgba(255, 255, 255, 0.95);
           transform: translateY(-2px);
           box-shadow: 
-            0 0 0 6px rgba(99, 102, 241, 0.08),
-            0 8px 32px rgba(99, 102, 241, 0.12);
+            0 0 0 6px rgba(0, 0, 0, 0.08),
+            0 8px 32px rgba(0, 0, 0, 0.12);
         }
 
         .extract-btn {
-          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+          background: linear-gradient(135deg, #000000 0%, #333333 100%);
           color: white;
           border: none;
           padding: 24px 32px;
@@ -207,7 +207,7 @@ export default function RecipeExtractor() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
@@ -215,8 +215,8 @@ export default function RecipeExtractor() {
         .extract-btn:hover:not(:disabled) {
           transform: translateY(-3px);
           box-shadow: 
-            0 16px 48px rgba(99, 102, 241, 0.25),
-            0 8px 24px rgba(99, 102, 241, 0.15);
+            0 16px 48px rgba(0, 0, 0, 0.25),
+            0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .extract-btn:hover:not(:disabled)::before {
@@ -290,10 +290,10 @@ export default function RecipeExtractor() {
 
         body {
           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+          background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
           min-height: 100vh;
           padding: 20px;
-          color: #1e293b;
+          color: #000000;
         }
 
         @keyframes gradientShift {
