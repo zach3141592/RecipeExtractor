@@ -91,7 +91,7 @@ export default function ImageExtractor() {
   return (
     <div className="container">
       <div className="header">
-        <h1>hands</h1>
+        <h1>Hands</h1>
         <p>Extract recipes from images using AI-powered text recognition</p>
       </div>
       

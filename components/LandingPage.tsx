@@ -16,7 +16,7 @@ export default function LandingPage() {
     <div className="landing-container">
       <div className="content">
         <div className="header">
-          <h1>hands</h1>
+          <h1>Hands</h1>
           <p>Extract recipes from anywhere</p>
         </div>
 
