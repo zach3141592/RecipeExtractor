@@ -6,10 +6,10 @@ export default function Navigation() {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', path: '/', icon: '🏠' },
-    { name: 'Add Image', path: '/extract-image', icon: '📷' },
-    { name: 'Add URL', path: '/extract-url', icon: '🔗' },
-    { name: 'Recipes', path: '/recipes', icon: '📋' },
+    { name: 'Home', path: '/' },
+    { name: 'Add Image', path: '/extract-image' },
+    { name: 'Add URL', path: '/extract-url' },
+    { name: 'Recipes', path: '/recipes' },
   ];
 
   const isActive = (path: string) => {
@@ -36,7 +36,6 @@ export default function Navigation() {
               href={item.path}
               className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
             >
-              <span className="nav-icon">{item.icon}</span>
               <span className="nav-text">{item.name}</span>
             </Link>
           ))}
@@ -112,57 +111,41 @@ export default function Navigation() {
         .nav-link {
           display: flex;
           align-items: center;
-          gap: 8px;
-          padding: 12px 16px;
-          border-radius: 12px;
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
+          padding: 12px 20px;
+          border-radius: 8px;
+          color: white;
+          text-decoration: none !important;
           font-size: 0.875rem;
           font-weight: 500;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .nav-link::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(255, 255, 255, 0.1);
-          opacity: 0;
-          transition: opacity 0.3s ease;
+          font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          transition: all 0.2s ease;
+          border: none;
+          outline: none;
         }
 
         .nav-link:hover {
-          color: white;
-          background: rgba(255, 255, 255, 0.05);
-          transform: translateY(-1px);
+          color: white !important;
+          background: rgba(255, 255, 255, 0.1);
+          text-decoration: none !important;
         }
 
-        .nav-link:hover::before {
-          opacity: 1;
+        .nav-link:focus {
+          color: white !important;
+          background: rgba(255, 255, 255, 0.1);
+          text-decoration: none !important;
+          outline: none;
         }
 
         .nav-link.active {
-          color: white;
-          background: rgba(255, 255, 255, 0.1);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-link.active::before {
-          opacity: 1;
-        }
-
-        .nav-icon {
-          font-size: 1rem;
-          opacity: 0.9;
+          color: white !important;
+          background: rgba(255, 255, 255, 0.15);
+          text-decoration: none !important;
         }
 
         .nav-text {
           white-space: nowrap;
+          color: inherit;
+          text-decoration: none !important;
         }
 
         @media (max-width: 768px) {
@@ -177,14 +160,6 @@ export default function Navigation() {
           .nav-link {
             padding: 8px 12px;
             font-size: 0.8rem;
-          }
-
-          .nav-text {
-            display: none;
-          }
-
-          .nav-icon {
-            font-size: 1.1rem;
           }
         }
 
@@ -208,10 +183,6 @@ export default function Navigation() {
 
           .nav-link {
             padding: 6px 8px;
-          }
-
-          .nav-icon {
-            font-size: 1rem;
           }
         }
       `}</style>
