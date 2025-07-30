@@ -471,6 +471,7 @@ export default function ImageExtractor() {
           background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
           min-height: 100vh;
           padding: 20px;
+          padding-top: 84px; /* Account for fixed navbar */
           color: #000000;
         }
 

@@ -75,6 +75,7 @@ export default function LandingPage() {
           align-items: center;
           justify-content: center;
           padding: 20px;
+          padding-top: 84px; /* Account for fixed navbar */
           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
