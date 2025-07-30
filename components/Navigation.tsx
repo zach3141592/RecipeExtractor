@@ -24,6 +24,7 @@ export default function Navigation() {
       <div className="nav-container">
         <div className="nav-brand">
           <Link href="/">
+            <img src="/logo.png" alt="Hands Logo" className="brand-logo" />
             <span className="brand-text">Hands</span>
           </Link>
         </div>
@@ -68,6 +69,24 @@ export default function Navigation() {
         .nav-brand {
           display: flex;
           align-items: center;
+        }
+
+        .nav-brand a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          text-decoration: none;
+        }
+
+        .brand-logo {
+          height: 32px;
+          width: auto;
+          transition: all 0.2s ease;
+        }
+
+        .brand-logo:hover {
+          opacity: 0.8;
+          transform: scale(1.02);
         }
 
         .brand-text {
@@ -173,6 +192,10 @@ export default function Navigation() {
           .nav-container {
             padding: 0 12px;
             height: 56px;
+          }
+
+          .brand-logo {
+            height: 28px;
           }
 
           .brand-text {
