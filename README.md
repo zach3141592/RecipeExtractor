@@ -276,5 +276,3 @@ If you encounter any issues or have questions:
 3. Create a new issue with detailed information about the problem
 
 ---
-
-Built with ❤️ using Next.js, React, TypeScript, and OpenAI. Ready for deployment on Vercel!
