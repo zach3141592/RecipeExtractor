@@ -134,7 +134,7 @@ export default function RecipeExtractor() {
         }
 
         .form-container {
-          max-width: 600px;
+          max-width: 900px;
           margin: 0 auto;
           background: rgba(255, 255, 255, 0.9);
           backdrop-filter: blur(20px);
@@ -170,13 +170,14 @@ export default function RecipeExtractor() {
           padding: 24px 28px;
           border: 2px solid rgba(0, 0, 0, 0.15);
           border-radius: 20px;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 400;
           background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(10px);
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           color: #000000;
           outline: none;
+          min-width: 0; /* Allows flex item to shrink below content size */
         }
 
         .url-input::placeholder {
@@ -264,6 +265,12 @@ export default function RecipeExtractor() {
             padding: 60px 24px;
           }
 
+          .form-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 32px;
+          }
+
           .input-group {
             flex-direction: column;
             gap: 12px;
@@ -285,6 +292,10 @@ export default function RecipeExtractor() {
 
           .content {
             padding: 32px 20px;
+          }
+
+          .form-container {
+            padding: 24px;
           }
         }
       `}</style>
