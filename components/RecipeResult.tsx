@@ -180,11 +180,13 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .copy-btn {
-          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+          background: #000000;
+          color: white;
         }
 
         .download-btn {
-          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          background: #000000;
+          color: white;
         }
 
         .copy-btn::before, .download-btn::before {
@@ -199,21 +201,21 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .copy-btn::before {
-          background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+          background: #333333;
         }
 
         .download-btn::before {
-          background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+          background: #333333;
         }
 
         .copy-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .download-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .copy-btn:hover::before, .download-btn:hover::before {
@@ -223,6 +225,7 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         .copy-btn span, .download-btn span {
           position: relative;
           z-index: 1;
+          color: white;
         }
 
         .recipe-content {
