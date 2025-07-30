@@ -44,14 +44,15 @@ export default function RecipeExtractor() {
 
 
   return (
-    <div className="container">
+    <div className="extractor-container">
       <div className="header">
         <h1>Hands</h1>
         <p>Extract clean, formatted recipes from any website or YouTube video</p>
       </div>
       
       <div className="content">
-        <form onSubmit={handleSubmit} className="url-form">
+        <div className="form-container">
+          <form onSubmit={handleSubmit} className="url-form">
           <div className="input-group">
             <input
               type="url"
@@ -69,7 +70,8 @@ export default function RecipeExtractor() {
               <span>{loading ? 'Extracting...' : 'Extract Recipe'}</span>
             </button>
           </div>
-        </form>
+          </form>
+        </div>
 
         {loading && <LoadingSpinner />}
         
@@ -79,18 +81,10 @@ export default function RecipeExtractor() {
       </div>
 
       <style jsx>{`
-        .container {
-          max-width: 900px;
-          margin: 0 auto;
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(20px);
-          border-radius: 24px;
-          box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.08),
-            0 1px 4px rgba(0, 0, 0, 0.04);
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          transition: all 0.3s ease;
+        .extractor-container {
+          min-height: 100vh;
+          padding-top: 64px; /* Account for fixed navbar */
+          background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
         }
 
         .header {
@@ -134,7 +128,22 @@ export default function RecipeExtractor() {
         }
 
         .content {
-          padding: 60px 40px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 80px 40px;
+        }
+
+        .form-container {
+          max-width: 600px;
+          margin: 0 auto;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(20px);
+          border-radius: 24px;
+          padding: 40px;
+          box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            0 1px 4px rgba(0, 0, 0, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .url-form {
@@ -235,9 +244,8 @@ export default function RecipeExtractor() {
         }
 
         @media (max-width: 768px) {
-          .container {
-            margin: 10px;
-            border-radius: 20px;
+          .extractor-container {
+            padding-top: 56px; /* Smaller navbar on mobile */
           }
 
           .header {
@@ -245,15 +253,15 @@ export default function RecipeExtractor() {
           }
 
           .header h1 {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
           }
 
           .header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
           }
 
           .content {
-            padding: 40px 24px;
+            padding: 60px 24px;
           }
 
           .input-group {
@@ -290,16 +298,7 @@ export default function RecipeExtractor() {
 
         body {
           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-          min-height: 100vh;
-          padding: 20px;
-          padding-top: 84px; /* Account for fixed navbar */
           color: #000000;
-        }
-
-        @keyframes gradientShift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
         }
 
         html {

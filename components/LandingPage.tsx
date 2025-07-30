@@ -14,11 +14,12 @@ export default function LandingPage() {
 
   return (
     <div className="landing-container">
+      <div className="header">
+        <h1>Hands</h1>
+        <p>Extract recipes from anywhere</p>
+      </div>
+      
       <div className="content">
-        <div className="header">
-          <h1>Hands</h1>
-          <p>Extract recipes from anywhere</p>
-        </div>
 
         <div className="selection-cards">
           <div className="card" onClick={handleURLInput}>
@@ -70,37 +71,54 @@ export default function LandingPage() {
       <style jsx>{`
         .landing-container {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 20px;
-          padding-top: 84px; /* Account for fixed navbar */
-          font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .content {
-          max-width: 800px;
-          width: 100%;
-          text-align: center;
+          padding-top: 64px; /* Account for fixed navbar */
+          background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
         }
 
         .header {
-          margin-bottom: 80px;
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+          color: white;
+          padding: 60px 40px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .header::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+          pointer-events: none;
         }
 
         .header h1 {
           font-size: 4rem;
-          font-weight: 200;
-          color: #1e293b;
           margin-bottom: 16px;
+          font-weight: 200;
           letter-spacing: -0.05em;
+          position: relative;
+          z-index: 1;
         }
 
         .header p {
           font-size: 1.5rem;
-          color: #64748b;
+          opacity: 0.9;
           font-weight: 300;
+          position: relative;
+          z-index: 1;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .content {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 80px 40px;
         }
 
         .selection-cards {
@@ -221,12 +239,24 @@ export default function LandingPage() {
         }
 
         @media (max-width: 768px) {
+          .landing-container {
+            padding-top: 56px; /* Smaller navbar on mobile */
+          }
+
+          .header {
+            padding: 40px 24px;
+          }
+
           .header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
           }
 
           .header p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+          }
+
+          .content {
+            padding: 60px 24px;
           }
 
           .selection-cards {
@@ -245,12 +275,12 @@ export default function LandingPage() {
         }
 
         @media (max-width: 480px) {
-          .header {
-            margin-bottom: 60px;
+          .header h1 {
+            font-size: 2rem;
           }
 
-          .header h1 {
-            font-size: 2.5rem;
+          .content {
+            padding: 40px 20px;
           }
 
           .card {
