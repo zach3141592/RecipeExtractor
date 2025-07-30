@@ -91,15 +91,18 @@ export default function Navigation() {
         .brand-text {
           font-size: 1.5rem;
           font-weight: 300;
-          color: white;
-          text-decoration: none;
+          color: white !important;
+          text-decoration: none !important;
           letter-spacing: -0.02em;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 0.3s ease;
         }
 
         .brand-text:hover {
+          color: white !important;
           opacity: 0.8;
+          transform: scale(1.02);
+          text-decoration: none !important;
         }
 
         .nav-links {
@@ -113,19 +116,44 @@ export default function Navigation() {
           align-items: center;
           padding: 12px 20px;
           border-radius: 8px;
-          color: white;
+          color: white !important;
           text-decoration: none !important;
           font-size: 0.875rem;
           font-weight: 500;
           font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          transition: all 0.2s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           border: none;
           outline: none;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .nav-link::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.1);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
         }
 
         .nav-link:hover {
           color: white !important;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.08);
+          text-decoration: none !important;
+          transform: translateY(-1px);
+        }
+
+        .nav-link:hover::before {
+          transform: scaleX(1);
+        }
+
+        .nav-link:hover .nav-text {
+          color: white !important;
           text-decoration: none !important;
         }
 
@@ -142,10 +170,17 @@ export default function Navigation() {
           text-decoration: none !important;
         }
 
+        .nav-link.active::before {
+          transform: scaleX(1);
+        }
+
         .nav-text {
           white-space: nowrap;
-          color: inherit;
+          color: white !important;
           text-decoration: none !important;
+          position: relative;
+          z-index: 1;
+          transition: all 0.3s ease;
         }
 
         @media (max-width: 768px) {
