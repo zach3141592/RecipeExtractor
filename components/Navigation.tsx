@@ -124,19 +124,21 @@ export default function Navigation() {
           justify-content: center;
           padding: 8px 12px 6px;
           text-decoration: none;
-          color: rgba(255, 255, 255, 0.7);
+          color: #ffffff !important;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           min-width: 60px;
           min-height: 52px;
           border-radius: 12px;
           position: relative;
           background: transparent;
+          opacity: 0.8;
         }
 
         .tab-item.active {
-          color: #ffffff;
+          color: #ffffff !important;
           background: rgba(255, 255, 255, 0.15);
           transform: translateY(-1px);
+          opacity: 1;
         }
 
         .tab-item.active::before {
@@ -168,11 +170,45 @@ export default function Navigation() {
           margin-bottom: 3px;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           stroke-width: 1.8;
+          color: #ffffff !important;
+        }
+
+        .tab-icon svg {
+          stroke: #ffffff !important;
+          color: #ffffff !important;
+          width: 100%;
+          height: 100%;
+          stroke-width: 1.8 !important;
+        }
+
+        .tab-icon svg path,
+        .tab-icon svg polyline,
+        .tab-icon svg rect,
+        .tab-icon svg circle,
+        .tab-icon svg line {
+          stroke: #ffffff !important;
+          color: #ffffff !important;
         }
 
         .tab-item.active .tab-icon {
           transform: scale(1.05);
           stroke-width: 2.2;
+          color: #ffffff !important;
+        }
+
+        .tab-item.active .tab-icon svg {
+          stroke: #ffffff !important;
+          color: #ffffff !important;
+          stroke-width: 2.2 !important;
+        }
+
+        .tab-item.active .tab-icon svg path,
+        .tab-item.active .tab-icon svg polyline,
+        .tab-item.active .tab-icon svg rect,
+        .tab-item.active .tab-icon svg circle,
+        .tab-item.active .tab-icon svg line {
+          stroke: #ffffff !important;
+          color: #ffffff !important;
         }
 
         .tab-label {
@@ -182,6 +218,7 @@ export default function Navigation() {
           letter-spacing: -0.2px;
           font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
           margin-top: 1px;
+          color: #ffffff !important;
         }
 
         .tab-item.active .tab-label {
@@ -212,12 +249,14 @@ export default function Navigation() {
           }
 
           .tab-item {
-            color: rgba(255, 255, 255, 0.8);
+            color: #ffffff !important;
+            opacity: 0.8;
           }
 
           .tab-item.active {
-            color: #ffffff;
+            color: #ffffff !important;
             background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
           }
 
           .tab-item.active::before {
@@ -230,6 +269,28 @@ export default function Navigation() {
 
           .tab-item.active:active {
             background: rgba(255, 255, 255, 0.25);
+          }
+
+          .tab-label {
+            color: #ffffff !important;
+          }
+
+          .tab-icon {
+            color: #ffffff !important;
+          }
+
+          .tab-icon svg {
+            stroke: #ffffff !important;
+            color: #ffffff !important;
+          }
+
+          .tab-icon svg path,
+          .tab-icon svg polyline,
+          .tab-icon svg rect,
+          .tab-icon svg circle,
+          .tab-icon svg line {
+            stroke: #ffffff !important;
+            color: #ffffff !important;
           }
 
           .home-indicator {

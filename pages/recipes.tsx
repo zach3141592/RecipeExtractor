@@ -32,11 +32,11 @@ export default function Recipes() {
             <p>Start extracting recipes from URLs or images to see them here.</p>
             <div className="action-buttons">
               <a href="/extract-url" className="action-btn">
-                <span className="btn-icon">🔗</span>
+             
                 <span>Extract from URL</span>
               </a>
               <a href="/extract-image" className="action-btn">
-                <span className="btn-icon">📷</span>
+
                 <span>Extract from Image</span>
               </a>
             </div>
@@ -81,30 +81,30 @@ export default function Recipes() {
         }
 
         .content {
-          max-width: 1200px;
+          max-width: 100%;
           margin: 0 auto;
-          padding: 80px 40px;
+          padding: 32px 20px;
         }
 
         .empty-state {
           text-align: center;
-          max-width: 500px;
+          max-width: 100%;
           margin: 0 auto;
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(20px);
-          border-radius: 24px;
-          padding: 60px 40px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(30px);
+          border-radius: 20px;
+          padding: 40px 24px;
           box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.08),
-            0 1px 4px rgba(0, 0, 0, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+            0 4px 20px rgba(0, 0, 0, 0.06),
+            0 1px 3px rgba(0, 0, 0, 0.02);
+          border: 0.5px solid rgba(0, 0, 0, 0.08);
         }
 
         .empty-icon {
-          width: 80px;
-          height: 80px;
-          margin: 0 auto 32px;
-          color: #666666;
+          width: 64px;
+          height: 64px;
+          margin: 0 auto 24px;
+          color: #8e8e93;
         }
 
         .empty-icon svg {
@@ -113,17 +113,17 @@ export default function Recipes() {
         }
 
         .empty-state h3 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: 600;
-          color: #000000;
-          margin-bottom: 16px;
+          color: #1d1d1f;
+          margin-bottom: 12px;
         }
 
         .empty-state p {
-          font-size: 1.1rem;
-          color: #666666;
-          margin-bottom: 40px;
-          line-height: 1.6;
+          font-size: 1rem;
+          color: #6d6d70;
+          margin-bottom: 24px;
+          line-height: 1.4;
         }
 
         .action-buttons {
@@ -137,38 +137,29 @@ export default function Recipes() {
           display: flex;
           align-items: center;
           gap: 8px;
-          padding: 16px 24px;
-          background: linear-gradient(135deg, #000000 0%, #333333 100%);
+          padding: 14px 20px;
+          background: #007aff;
           color: white;
           text-decoration: none;
-          border-radius: 16px;
-          font-weight: 500;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: all 0.25s ease;
           position: relative;
           overflow: hidden;
         }
 
-        .action-btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
         .action-btn:hover {
-          transform: translateY(-2px);
+          background: #0056b3;
+          transform: translateY(-1px);
           box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.2),
-            0 4px 16px rgba(0, 0, 0, 0.1);
+            0 6px 20px rgba(0, 122, 255, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .action-btn:hover::before {
-          opacity: 1;
+        .action-btn:active {
+          transform: translateY(0px);
+          background: #004494;
         }
 
         .btn-icon {
@@ -199,29 +190,29 @@ export default function Recipes() {
           }
 
           .content {
-            padding: 32px 16px;
+            padding: 24px 16px;
           }
 
           .empty-state {
-            padding: 32px 20px;
-            border-radius: 20px;
+            padding: 28px 18px;
+            border-radius: 18px;
           }
 
           .empty-state h3 {
-            font-size: 1.7rem;
-            margin-bottom: 12px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
           }
 
           .empty-state p {
-            font-size: 1rem;
-            line-height: 1.4;
-            margin-bottom: 28px;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
           }
 
           .empty-icon {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 20px;
+            width: 52px;
+            height: 52px;
+            margin-bottom: 16px;
           }
 
           .action-buttons {
@@ -232,11 +223,11 @@ export default function Recipes() {
 
           .action-btn {
             width: 100%;
-            max-width: 200px;
+            max-width: 180px;
             justify-content: center;
-            padding: 16px 24px;
-            font-size: 15px;
-            border-radius: 14px;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
             font-weight: 600;
           }
 
@@ -256,36 +247,36 @@ export default function Recipes() {
           }
 
           .content {
-            padding: 24px 12px;
+            padding: 20px 12px;
           }
 
           .empty-state {
-            padding: 28px 16px;
+            padding: 24px 16px;
             border-radius: 16px;
           }
 
           .empty-state h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
           }
 
           .empty-state p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             line-height: 1.3;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
           }
 
           .empty-icon {
-            width: 52px;
-            height: 52px;
-            margin-bottom: 16px;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 14px;
           }
 
           .action-btn {
             max-width: none;
-            padding: 14px 20px;
-            font-size: 14px;
-            border-radius: 12px;
+            padding: 12px 18px;
+            font-size: 0.85rem;
+            border-radius: 10px;
           }
         }
       `}</style>

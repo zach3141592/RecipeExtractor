@@ -98,7 +98,6 @@ export default function ImageExtractor() {
       </div>
       
       <div className="content">
-        <div className="form-container">
           <form onSubmit={handleSubmit} className="upload-form">
           <div 
             className={`upload-area ${dragActive ? 'drag-active' : ''} ${selectedFile ? 'has-file' : ''}`}
@@ -164,7 +163,6 @@ export default function ImageExtractor() {
             </button>
           )}
           </form>
-        </div>
 
         {loading && <LoadingSpinner />}
         
@@ -210,53 +208,39 @@ export default function ImageExtractor() {
         }
 
         .content {
-          max-width: 1200px;
+          max-width: 100%;
           margin: 0 auto;
-          padding: 80px 40px;
-        }
-
-        .form-container {
-          max-width: 600px;
-          margin: 0 auto;
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(20px);
-          border-radius: 24px;
-          padding: 40px;
-          box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.08),
-            0 1px 4px rgba(0, 0, 0, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 32px 20px;
         }
 
         .upload-form {
-          margin-bottom: 50px;
-          background: rgba(255, 255, 255, 0.6);
-          backdrop-filter: blur(10px);
+          max-width: 100%;
+          margin: 0 auto 24px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(30px);
           border-radius: 20px;
-          padding: 40px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          padding: 24px;
           box-shadow: 
-            0 4px 16px rgba(0, 0, 0, 0.05),
-            0 1px 4px rgba(0, 0, 0, 0.02);
+            0 4px 20px rgba(0, 0, 0, 0.06),
+            0 1px 3px rgba(0, 0, 0, 0.02);
+          border: 0.5px solid rgba(0, 0, 0, 0.08);
         }
 
         .upload-area {
-          border: 2px dashed rgba(0, 0, 0, 0.2);
-          border-radius: 24px;
-          padding: 60px 40px;
+          border: 2px dashed rgba(0, 0, 0, 0.15);
+          border-radius: 16px;
+          padding: 32px 20px;
           text-align: center;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          background: rgba(255, 255, 255, 0.7);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(20px);
-          margin-bottom: 32px;
-          /* Improve touch interaction */
-          min-height: 200px;
+          margin-bottom: 20px;
+          min-height: 160px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          /* Better mobile touch handling */
           -webkit-touch-callout: none;
           -webkit-user-select: none;
           -khtml-user-select: none;
@@ -281,28 +265,28 @@ export default function ImageExtractor() {
         }
 
         .upload-content h3 {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 600;
-          color: #000000;
-          margin-bottom: 8px;
+          color: #1d1d1f;
+          margin-bottom: 6px;
         }
 
         .upload-content p {
-          font-size: 1rem;
-          color: #333333;
-          margin-bottom: 16px;
+          font-size: 0.9rem;
+          color: #6d6d70;
+          margin-bottom: 12px;
         }
 
         .supported-formats {
-          font-size: 0.875rem;
-          color: #666666;
+          font-size: 0.8rem;
+          color: #8e8e93;
         }
 
         .upload-icon {
-          width: 64px;
-          height: 64px;
-          margin: 0 auto 24px;
-          color: #000000;
+          width: 48px;
+          height: 48px;
+          margin: 0 auto 16px;
+          color: #007aff;
         }
 
         .upload-icon svg {
@@ -372,45 +356,35 @@ export default function ImageExtractor() {
         }
 
         .extract-btn {
-          background: linear-gradient(135deg, #000000 0%, #333333 100%);
+          background: #007aff;
           color: white;
           border: none;
-          padding: 24px 40px;
-          border-radius: 20px;
-          font-size: 16px;
-          font-weight: 500;
+          padding: 16px 24px;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          font-weight: 600;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          min-width: 160px;
+          transition: all 0.25s ease;
+          min-width: 140px;
           position: relative;
           overflow: hidden;
           width: 100%;
-          max-width: 200px;
+          max-width: 180px;
           margin: 0 auto;
           display: block;
         }
 
-        .extract-btn::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
         .extract-btn:hover:not(:disabled) {
-          transform: translateY(-3px);
+          background: #0056b3;
+          transform: translateY(-1px);
           box-shadow: 
-            0 16px 48px rgba(0, 0, 0, 0.25),
-            0 8px 24px rgba(0, 0, 0, 0.15);
+            0 8px 20px rgba(0, 122, 255, 0.3),
+            0 2px 8px rgba(0, 122, 255, 0.2);
         }
 
-        .extract-btn:hover:not(:disabled)::before {
-          opacity: 1;
+        .extract-btn:active:not(:disabled) {
+          transform: translateY(0px);
+          background: #004494;
         }
 
         .extract-btn:disabled {
@@ -441,25 +415,19 @@ export default function ImageExtractor() {
           }
 
           .content {
-            padding: 32px 16px;
-          }
-
-          .form-container {
-            padding: 24px;
-            border-radius: 20px;
+            padding: 24px 16px;
           }
 
           .upload-form {
-            padding: 24px;
-            border-radius: 16px;
+            padding: 20px;
+            border-radius: 18px;
           }
 
           .upload-area {
-            padding: 36px 20px;
-            border-radius: 20px;
-            margin-bottom: 24px;
-            min-height: 180px;
-            /* Enhanced mobile touch area */
+            padding: 28px 16px;
+            border-radius: 14px;
+            margin-bottom: 16px;
+            min-height: 140px;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
           }
 
@@ -469,18 +437,18 @@ export default function ImageExtractor() {
           }
 
           .upload-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 6px;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
           }
 
           .upload-content p {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            margin-bottom: 12px;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            margin-bottom: 8px;
           }
 
           .supported-formats {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
           }
 
           .file-preview {

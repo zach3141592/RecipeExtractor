@@ -53,27 +53,27 @@ export default function RecipeExtractor() {
       </div>
       
       <div className="content">
-        <div className="form-container">
           <form onSubmit={handleSubmit} className="url-form">
-          <div className="input-group">
-            <input
-              type="url"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              placeholder="Enter recipe website URL or YouTube video URL..."
-              className="url-input"
-              required
-            />
-            <button 
-              type="submit" 
-              disabled={loading}
-              className="extract-btn"
-            >
-              <span>{loading ? 'Extracting...' : 'Extract Recipe'}</span>
-            </button>
-          </div>
+            <div className="input-container">
+              <input
+                type="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="Enter recipe website URL or YouTube video URL..."
+                className="url-input"
+                required
+              />
+            </div>
+            <div className="button-container">
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="extract-btn"
+              >
+                <span>{loading ? 'Extracting...' : 'Extract Recipe'}</span>
+              </button>
+            </div>
           </form>
-        </div>
 
         {loading && <LoadingSpinner />}
         
@@ -119,56 +119,46 @@ export default function RecipeExtractor() {
         }
 
         .content {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 80px 40px;
-        }
-
-        .form-container {
           max-width: 100%;
           margin: 0 auto;
+          padding: 32px 20px;
+        }
+
+        .url-form {
+          max-width: 100%;
+          margin: 0 auto 24px;
           background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(30px);
           border-radius: 20px;
-          padding: 32px 24px;
+          padding: 24px;
           box-shadow: 
             0 4px 20px rgba(0, 0, 0, 0.06),
             0 1px 3px rgba(0, 0, 0, 0.02);
           border: 0.5px solid rgba(0, 0, 0, 0.08);
         }
 
-        .url-form {
-          margin-bottom: 32px;
-          background: rgba(255, 255, 255, 0.8);
-          backdrop-filter: blur(20px);
-          border-radius: 16px;
-          padding: 28px;
-          border: 0.5px solid rgba(0, 0, 0, 0.06);
-          box-shadow: 
-            0 2px 12px rgba(0, 0, 0, 0.04),
-            0 1px 3px rgba(0, 0, 0, 0.02);
+        .input-container {
+          margin-bottom: 16px;
         }
 
-        .input-group {
+        .button-container {
           display: flex;
-          gap: 16px;
-          margin-bottom: 24px;
-          align-items: stretch;
+          justify-content: center;
         }
 
         .url-input {
-          flex: 1;
-          padding: 20px 24px;
+          width: 100%;
+          padding: 16px 20px;
           border: 1.5px solid rgba(0, 0, 0, 0.12);
-          border-radius: 16px;
-          font-size: 16px;
+          border-radius: 12px;
+          font-size: 0.95rem;
           font-weight: 400;
           background: rgba(255, 255, 255, 0.9);
           backdrop-filter: blur(10px);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           color: #1d1d1f;
           outline: none;
-          min-width: 0; /* Allows flex item to shrink below content size */
+          box-sizing: border-box;
         }
 
         .url-input::placeholder {
@@ -189,24 +179,25 @@ export default function RecipeExtractor() {
           background: #007aff;
           color: white;
           border: none;
-          padding: 20px 28px;
-          border-radius: 16px;
-          font-size: 16px;
+          padding: 16px 24px;
+          border-radius: 12px;
+          font-size: 0.95rem;
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          min-width: 140px;
+          transition: all 0.25s ease;
+          min-width: 120px;
+          max-width: 200px;
           position: relative;
           overflow: hidden;
           white-space: nowrap;
         }
 
         .extract-btn:hover:not(:disabled) {
-          background: #0051d0;
-          transform: translateY(-2px);
+          background: #0056b3;
+          transform: translateY(-1px);
           box-shadow: 
-            0 8px 25px rgba(0, 122, 255, 0.3),
-            0 4px 12px rgba(0, 0, 0, 0.1);
+            0 6px 20px rgba(0, 122, 255, 0.3),
+            0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .extract-btn:active:not(:disabled) {
@@ -242,31 +233,22 @@ export default function RecipeExtractor() {
           }
 
           .content {
-            padding: 32px 16px;
-          }
-
-          .form-container {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 24px;
-            border-radius: 20px;
+            padding: 24px 16px;
           }
 
           .url-form {
-            padding: 24px;
-            border-radius: 16px;
+            padding: 20px;
+            border-radius: 18px;
           }
 
-          .input-group {
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 20px;
+          .input-container {
+            margin-bottom: 16px;
           }
 
           .url-input {
-            padding: 18px 20px;
+            padding: 14px 16px;
             font-size: 16px;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1.5px solid rgba(0, 0, 0, 0.15);
           }
 
@@ -275,11 +257,11 @@ export default function RecipeExtractor() {
           }
 
           .extract-btn {
-            padding: 18px 32px;
-            font-size: 16px;
-            border-radius: 14px;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            border-radius: 12px;
             width: 100%;
-            max-width: none;
+            max-width: 280px;
             font-weight: 600;
           }
         }
