@@ -91,8 +91,10 @@ export default function ImageExtractor() {
   return (
     <div className="image-container">
       <div className="header">
-        <h1>Hands</h1>
-        <p>Extract recipes from images using AI-powered text recognition</p>
+        <div className="header-content">
+          <img src="/logo.png" alt="Hands Logo" className="header-logo" />
+          <span className="header-title">Hands</span>
+        </div>
       </div>
       
       <div className="content">
@@ -174,48 +176,37 @@ export default function ImageExtractor() {
       <style jsx>{`
         .image-container {
           min-height: 100vh;
-          padding-top: 64px; /* Account for fixed navbar */
+          padding-bottom: 100px; /* Account for bottom tab bar */
           background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+          max-width: 428px; /* iPhone 14 Pro Max width */
+          margin: 0 auto;
+          position: relative;
         }
 
         .header {
-          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+          background: #000000;
           color: white;
-          padding: 60px 40px;
-          text-align: center;
+          padding: max(54px, env(safe-area-inset-top)) 20px 16px;
           position: relative;
-          overflow: hidden;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-          pointer-events: none;
+        .header-content {
+          display: flex;
+          align-items: center;
+          gap: 12px;
         }
 
-        .header h1 {
-          font-size: 4rem;
-          margin-bottom: 16px;
-          font-weight: 200;
-          letter-spacing: -0.05em;
-          position: relative;
-          z-index: 1;
+        .header-logo {
+          width: 28px;
+          height: 28px;
         }
 
-        .header p {
-          font-size: 1.5rem;
-          opacity: 0.9;
-          font-weight: 300;
-          position: relative;
-          z-index: 1;
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
+        .header-title {
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: white;
+          letter-spacing: -0.02em;
         }
 
         .content {
@@ -259,6 +250,19 @@ export default function ImageExtractor() {
           background: rgba(255, 255, 255, 0.7);
           backdrop-filter: blur(20px);
           margin-bottom: 32px;
+          /* Improve touch interaction */
+          min-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          /* Better mobile touch handling */
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
 
         .upload-area:hover,
@@ -420,49 +424,137 @@ export default function ImageExtractor() {
           z-index: 1;
         }
 
-        @media (max-width: 768px) {
-          .image-container {
-            padding-top: 56px; /* Smaller navbar on mobile */
-          }
-
+        @media (max-width: 428px) {
           .header {
-            padding: 40px 24px;
+            padding: max(44px, env(safe-area-inset-top)) 16px 32px;
           }
 
           .header h1 {
             font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 12px;
           }
 
           .header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.4;
           }
 
           .content {
-            padding: 60px 24px;
+            padding: 32px 16px;
+          }
+
+          .form-container {
+            padding: 24px;
+            border-radius: 20px;
+          }
+
+          .upload-form {
+            padding: 24px;
+            border-radius: 16px;
           }
 
           .upload-area {
-            padding: 40px 20px;
+            padding: 36px 20px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            min-height: 180px;
+            /* Enhanced mobile touch area */
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+          }
+
+          .upload-area:active {
+            transform: scale(0.98);
+            background: rgba(0, 0, 0, 0.08);
+          }
+
+          .upload-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+          }
+
+          .upload-content p {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+          }
+
+          .supported-formats {
+            font-size: 0.8rem;
           }
 
           .file-preview {
             flex-direction: column;
             text-align: center;
             gap: 12px;
+            padding: 16px;
+            border-radius: 12px;
+          }
+
+          .file-name {
+            font-size: 0.85rem;
+          }
+
+          .extract-btn {
+            padding: 18px 32px;
+            font-size: 16px;
+            border-radius: 14px;
+            width: 100%;
+            max-width: none;
+            font-weight: 600;
           }
         }
 
-        @media (max-width: 480px) {
+        /* Smaller iPhones */
+        @media (max-width: 375px) {
           .header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
+          }
+
+          .header p {
+            font-size: 1rem;
           }
 
           .content {
-            padding: 32px 20px;
+            padding: 24px 12px;
+          }
+
+          .form-container {
+            padding: 20px;
+            border-radius: 16px;
+          }
+
+          .upload-form {
+            padding: 20px;
+            border-radius: 12px;
           }
 
           .upload-area {
-            padding: 32px 16px;
+            padding: 28px 16px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            min-height: 160px;
+          }
+
+          .upload-content h3 {
+            font-size: 1.2rem;
+          }
+
+          .upload-content p {
+            font-size: 0.9rem;
+            line-height: 1.3;
+          }
+
+          .upload-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 12px;
+          }
+
+          .extract-btn {
+            padding: 16px 24px;
+            font-size: 15px;
+            border-radius: 12px;
           }
         }
       `}</style>

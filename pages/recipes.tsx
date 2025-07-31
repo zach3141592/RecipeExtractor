@@ -7,7 +7,7 @@ export default function Recipes() {
       <Head>
         <title>Hands - Your Recipes</title>
         <meta name="description" content="View and manage your extracted recipes" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
@@ -15,8 +15,10 @@ export default function Recipes() {
       
       <div className="recipes-container">
         <div className="header">
-          <h1>Your Recipes</h1>
-          <p>Manage and browse your extracted recipes</p>
+          <div className="header-content">
+            <img src="/logo.png" alt="Hands Logo" className="header-logo" />
+            <span className="header-title">Hands</span>
+          </div>
         </div>
         
         <div className="content">
@@ -45,48 +47,37 @@ export default function Recipes() {
       <style jsx>{`
         .recipes-container {
           min-height: 100vh;
-          padding-top: 64px; /* Account for fixed navbar */
+          padding-bottom: 100px; /* Account for bottom tab bar */
           background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+          max-width: 428px; /* iPhone 14 Pro Max width */
+          margin: 0 auto;
+          position: relative;
         }
 
         .header {
-          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+          background: #000000;
           color: white;
-          padding: 60px 40px;
-          text-align: center;
+          padding: max(54px, env(safe-area-inset-top)) 20px 16px;
           position: relative;
-          overflow: hidden;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-          pointer-events: none;
+        .header-content {
+          display: flex;
+          align-items: center;
+          gap: 12px;
         }
 
-        .header h1 {
-          font-size: 4rem;
-          margin-bottom: 16px;
-          font-weight: 200;
-          letter-spacing: -0.05em;
-          position: relative;
-          z-index: 1;
+        .header-logo {
+          width: 28px;
+          height: 28px;
         }
 
-        .header p {
-          font-size: 1.5rem;
-          opacity: 0.9;
-          font-weight: 300;
-          position: relative;
-          z-index: 1;
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
+        .header-title {
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: white;
+          letter-spacing: -0.02em;
         }
 
         .content {
@@ -191,54 +182,110 @@ export default function Recipes() {
           z-index: 1;
         }
 
-        @media (max-width: 768px) {
-          .recipes-container {
-            padding-top: 56px; /* Smaller navbar on mobile */
-          }
-
+        @media (max-width: 428px) {
           .header {
-            padding: 40px 24px;
+            padding: max(44px, env(safe-area-inset-top)) 16px 32px;
           }
 
           .header h1 {
             font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 12px;
           }
 
           .header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.4;
           }
 
           .content {
-            padding: 60px 24px;
+            padding: 32px 16px;
           }
 
           .empty-state {
-            padding: 40px 24px;
+            padding: 32px 20px;
+            border-radius: 20px;
+          }
+
+          .empty-state h3 {
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+          }
+
+          .empty-state p {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 28px;
+          }
+
+          .empty-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 20px;
           }
 
           .action-buttons {
             flex-direction: column;
             align-items: center;
+            gap: 12px;
           }
 
           .action-btn {
             width: 100%;
             max-width: 200px;
             justify-content: center;
+            padding: 16px 24px;
+            font-size: 15px;
+            border-radius: 14px;
+            font-weight: 600;
+          }
+
+          .btn-icon {
+            font-size: 1rem;
           }
         }
 
-        @media (max-width: 480px) {
+        /* Smaller iPhones */
+        @media (max-width: 375px) {
           .header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
+          }
+
+          .header p {
+            font-size: 1rem;
           }
 
           .content {
-            padding: 40px 20px;
+            padding: 24px 12px;
           }
 
           .empty-state {
-            padding: 32px 20px;
+            padding: 28px 16px;
+            border-radius: 16px;
+          }
+
+          .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+          }
+
+          .empty-state p {
+            font-size: 0.95rem;
+            line-height: 1.3;
+            margin-bottom: 24px;
+          }
+
+          .empty-icon {
+            width: 52px;
+            height: 52px;
+            margin-bottom: 16px;
+          }
+
+          .action-btn {
+            max-width: none;
+            padding: 14px 20px;
+            font-size: 14px;
+            border-radius: 12px;
           }
         }
       `}</style>

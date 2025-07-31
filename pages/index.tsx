@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Hands - Extract recipes from anywhere</title>
         <meta name="description" content="Extract and format recipes from websites, YouTube videos, or images using AI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />

@@ -15,8 +15,10 @@ export default function LandingPage() {
   return (
     <div className="landing-container">
       <div className="header">
-        <h1>Hands</h1>
-        <p>Extract recipes from anywhere</p>
+        <div className="header-content">
+          <img src="/logo.png" alt="Hands Logo" className="header-logo" />
+          <span className="header-title">Hands</span>
+        </div>
       </div>
       
       <div className="content">
@@ -71,76 +73,70 @@ export default function LandingPage() {
       <style jsx>{`
         .landing-container {
           min-height: 100vh;
-          padding-top: 64px; /* Account for fixed navbar */
+          padding-bottom: 100px; /* Account for bottom tab bar */
           background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+          max-width: 428px; /* iPhone 14 Pro Max width */
+          margin: 0 auto;
+          position: relative;
         }
 
         .header {
-          background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+          background: #000000;
           color: white;
-          padding: 60px 40px;
-          text-align: center;
+          padding: max(54px, env(safe-area-inset-top)) 20px 16px;
           position: relative;
-          overflow: hidden;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-          pointer-events: none;
+        .header-content {
+          display: flex;
+          align-items: center;
+          gap: 12px;
         }
 
-        .header h1 {
-          font-size: 4rem;
-          margin-bottom: 16px;
-          font-weight: 200;
-          letter-spacing: -0.05em;
-          position: relative;
-          z-index: 1;
+        .header-logo {
+          width: 28px;
+          height: 28px;
         }
 
-        .header p {
-          font-size: 1.5rem;
-          opacity: 0.9;
-          font-weight: 300;
-          position: relative;
-          z-index: 1;
-          max-width: 600px;
-          margin: 0 auto;
-          line-height: 1.6;
+        .header-title {
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: white;
+          letter-spacing: -0.02em;
         }
 
         .content {
-          max-width: 1200px;
+          max-width: 100%;
           margin: 0 auto;
-          padding: 80px 40px;
+          padding: 48px 20px 32px;
         }
 
         .selection-cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 32px;
-          margin-bottom: 80px;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          margin-bottom: 48px;
         }
 
         .card {
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(20px);
-          border-radius: 24px;
-          padding: 48px 32px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(30px);
+          border-radius: 20px;
+          padding: 32px 24px;
+          border: 0.5px solid rgba(0, 0, 0, 0.08);
           box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.08),
-            0 1px 4px rgba(0, 0, 0, 0.04);
+            0 4px 20px rgba(0, 0, 0, 0.06),
+            0 1px 3px rgba(0, 0, 0, 0.02);
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
+          /* Better mobile touch interaction */
+          -webkit-tap-highlight-color: rgba(0, 122, 255, 0.1);
+          touch-action: manipulation;
+          /* Ensure minimum touch target size */
+          min-height: 140px;
         }
 
         .card::before {
@@ -150,27 +146,31 @@ export default function LandingPage() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+          background: linear-gradient(135deg, rgba(0, 122, 255, 0.04) 0%, rgba(88, 86, 214, 0.04) 100%);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
 
         .card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-4px);
           box-shadow: 
-            0 16px 48px rgba(0, 0, 0, 0.12),
-            0 4px 16px rgba(0, 0, 0, 0.08);
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .card:hover::before {
           opacity: 1;
         }
 
+        .card:active {
+          transform: translateY(-2px) scale(0.98);
+        }
+
         .card-icon {
-          width: 64px;
-          height: 64px;
-          margin: 0 auto 24px;
-          color: #6366f1;
+          width: 52px;
+          height: 52px;
+          margin: 0 auto 20px;
+          color: #007aff;
           position: relative;
           z-index: 1;
         }
@@ -178,32 +178,35 @@ export default function LandingPage() {
         .card-icon svg {
           width: 100%;
           height: 100%;
+          stroke-width: 1.5;
         }
 
         .card h3 {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           font-weight: 600;
-          color: #1e293b;
-          margin-bottom: 12px;
+          color: #1d1d1f;
+          margin-bottom: 8px;
           position: relative;
           z-index: 1;
+          line-height: 1.3;
         }
 
         .card p {
-          font-size: 1rem;
-          color: #64748b;
-          line-height: 1.6;
-          margin-bottom: 24px;
+          font-size: 0.95rem;
+          color: #6d6d70;
+          line-height: 1.5;
+          margin-bottom: 20px;
           position: relative;
           z-index: 1;
+          font-weight: 400;
         }
 
         .card-arrow {
-          width: 24px;
-          height: 24px;
-          color: #6366f1;
+          width: 20px;
+          height: 20px;
+          color: #007aff;
           margin: 0 auto;
-          opacity: 0.6;
+          opacity: 0.7;
           transition: all 0.3s ease;
           position: relative;
           z-index: 1;
@@ -211,7 +214,7 @@ export default function LandingPage() {
 
         .card:hover .card-arrow {
           opacity: 1;
-          transform: translateX(4px);
+          transform: translateX(3px);
         }
 
         .footer {
@@ -221,70 +224,133 @@ export default function LandingPage() {
         .features {
           display: flex;
           justify-content: center;
-          gap: 32px;
+          gap: 12px;
           flex-wrap: wrap;
         }
 
         .feature {
-          padding: 8px 20px;
-          background: rgba(255, 255, 255, 0.7);
-          border-radius: 12px;
-          border: 1px solid rgba(0, 0, 0, 0.05);
+          padding: 8px 16px;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 16px;
+          border: 0.5px solid rgba(0, 0, 0, 0.06);
+          backdrop-filter: blur(10px);
         }
 
         .feature span {
-          font-size: 0.875rem;
-          color: #64748b;
+          font-size: 0.8rem;
+          color: #6d6d70;
           font-weight: 500;
         }
 
-        @media (max-width: 768px) {
-          .landing-container {
-            padding-top: 56px; /* Smaller navbar on mobile */
-          }
-
+        @media (max-width: 428px) {
           .header {
-            padding: 40px 24px;
+            padding: max(54px, env(safe-area-inset-top)) 16px 14px;
           }
 
-          .header h1 {
-            font-size: 2.5rem;
+          .header-logo {
+            width: 26px;
+            height: 26px;
           }
 
-          .header p {
+          .header-title {
             font-size: 1.2rem;
           }
 
           .content {
-            padding: 60px 24px;
+            padding: 36px 18px 24px;
           }
 
           .selection-cards {
-            grid-template-columns: 1fr;
-            gap: 24px;
-            margin-bottom: 60px;
+            gap: 14px;
+            margin-bottom: 36px;
           }
 
           .card {
-            padding: 36px 24px;
+            padding: 28px 22px;
+            border-radius: 18px;
+            min-height: 130px;
+          }
+
+          .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+          }
+
+          .card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 18px;
+          }
+
+          .card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
           }
 
           .features {
-            gap: 16px;
+            gap: 8px;
+          }
+
+          .feature {
+            padding: 6px 12px;
+            border-radius: 12px;
+          }
+
+          .feature span {
+            font-size: 0.75rem;
           }
         }
 
-        @media (max-width: 480px) {
-          .header h1 {
-            font-size: 2rem;
+        /* Smaller iPhones */
+        @media (max-width: 375px) {
+          .header {
+            padding: max(50px, env(safe-area-inset-top)) 14px 12px;
+          }
+
+          .header-logo {
+            width: 24px;
+            height: 24px;
+          }
+
+          .header-title {
+            font-size: 1.1rem;
           }
 
           .content {
-            padding: 40px 20px;
+            padding: 28px 16px 20px;
           }
 
           .card {
-            padding: 28px 20px;
+            padding: 24px 18px;
+            border-radius: 16px;
+          }
+
+          .card h3 {
+            font-size: 1.2rem;
+          }
+
+          .card p {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+          }
+
+          .card-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 14px;
+          }
+
+          .features {
+            gap: 6px;
+          }
+
+          .feature {
+            padding: 5px 10px;
+          }
+
+          .feature span {
+            font-size: 0.7rem;
           }
         }
       `}</style>

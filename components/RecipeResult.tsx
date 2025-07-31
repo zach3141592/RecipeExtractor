@@ -242,8 +242,9 @@ export default function RecipeResult({ data }: RecipeResultProps) {
 
         @media (max-width: 768px) {
           .result {
-            padding: 24px;
-            margin-top: 24px;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 16px;
           }
 
           .result-header {
@@ -251,11 +252,65 @@ export default function RecipeResult({ data }: RecipeResultProps) {
             align-items: stretch;
             text-align: center;
             gap: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
           }
           
           .result-title {
             min-width: auto;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            line-height: 1.3;
+          }
+
+          .result-source {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border-radius: 10px;
+            align-self: center;
+          }
+
+          .action-buttons {
+            flex-direction: row;
+            gap: 12px;
+            justify-content: center;
+          }
+
+          .copy-btn, .download-btn {
+            padding: 16px 20px;
+            font-size: 14px;
+            border-radius: 10px;
+            flex: 1;
+            max-width: 140px;
+          }
+
+          .recipe-content {
+            padding: 18px;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-radius: 12px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .result {
+            padding: 16px;
+            margin-top: 16px;
+          }
+
+          .result-header {
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+          }
+
+          .result-title {
+            font-size: 1.25rem;
+            line-height: 1.2;
+          }
+
+          .result-source {
+            padding: 4px 10px;
+            font-size: 0.75rem;
           }
 
           .action-buttons {
@@ -264,13 +319,16 @@ export default function RecipeResult({ data }: RecipeResultProps) {
           }
 
           .copy-btn, .download-btn {
-            padding: 14px 18px;
+            padding: 14px 16px;
             font-size: 13px;
+            max-width: none;
+            width: 100%;
           }
 
           .recipe-content {
-            padding: 20px;
+            padding: 16px;
             font-size: 0.95rem;
+            line-height: 1.5;
           }
         }
       `}</style>
