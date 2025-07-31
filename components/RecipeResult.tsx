@@ -140,7 +140,7 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .result-title {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 600;
           color: #1a202c;
           flex: 1;
@@ -149,7 +149,7 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .result-source {
-          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          background: #000000;
           color: white;
           padding: 8px 16px;
           border-radius: 12px;
@@ -180,12 +180,12 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .copy-btn {
-          background: #000000;
+          background: #007aff;
           color: white;
         }
 
         .download-btn {
-          background: #000000;
+          background: #007aff;
           color: white;
         }
 
@@ -201,11 +201,11 @@ export default function RecipeResult({ data }: RecipeResultProps) {
         }
 
         .copy-btn::before {
-          background: #333333;
+          background: #0056b3;
         }
 
         .download-btn::before {
-          background: #333333;
+          background: #0056b3;
         }
 
         .copy-btn:hover {
@@ -258,7 +258,7 @@ export default function RecipeResult({ data }: RecipeResultProps) {
           
           .result-title {
             min-width: auto;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             line-height: 1.3;
           }
 
@@ -304,7 +304,7 @@ export default function RecipeResult({ data }: RecipeResultProps) {
           }
 
           .result-title {
-            font-size: 1.25rem;
+            font-size: 1rem;
             line-height: 1.2;
           }
 
@@ -327,8 +327,8 @@ export default function RecipeResult({ data }: RecipeResultProps) {
 
           .recipe-content {
             padding: 16px;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.5rem;
+            line-height: 1.0;
           }
         }
       `}</style>
